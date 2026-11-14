@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dsqtnpxbvj7pa"]
+
+[ext_resource type="Script" uid="uid://b74l7p8lih355" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cug6dmmlrtmvy" path="res://daven-frame-004.png" id="2_0xm2m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
+radius = 47.010635
+
+[node name="Main" type="Node2D" unique_id=1784220593]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1727209506]
+position = Vector2(62, 115)
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=239598883]
+position = Vector2(263.5, 169.5)
+scale = Vector2(1.0833334, 1.0833334)
+texture = ExtResource("2_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=200552543]
+position = Vector2(265, 173)
+shape = SubResource("CircleShape2D_0xm2m")
