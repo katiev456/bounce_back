@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cugh6lph1wnou"]
 
 [ext_resource type="Script" uid="uid://b74l7p8lih355" path="res://player.gd" id="1_n0qsc"]
+[ext_resource type="Script" uid="uid://deg6s6b6770d1" path="res://Levels/ui.gd" id="2_3mhv4"]
+[ext_resource type="Script" uid="uid://jm8kl81kf4in" path="res://Levels/death_label.gd" id="2_dilhk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq2v1"]
 size = Vector2(600, 40)
@@ -23,3 +25,23 @@ offset_bottom = 20.0
 color = Color(0.8839384, 0.23602134, 0.068237476, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=974139972]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1005234388]
+script = ExtResource("2_3mhv4")
+
+[node name="DeathLabel" type="Label" parent="CanvasLayer" unique_id=200572337]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 60.0
+text = "Deaths: 0"
+script = ExtResource("2_dilhk")
+
+[node name="RestartButton" type="Button" parent="CanvasLayer" unique_id=421064918]
+offset_left = 20.0
+offset_top = 70.0
+offset_right = 140.0
+offset_bottom = 110.0
+text = "Restart"
+
+[connection signal="pressed" from="CanvasLayer/RestartButton" to="CanvasLayer" method="_on_restart_button_pressed"]
