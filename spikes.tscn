@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dub1r5y3n4up3"]
+
+[ext_resource type="Script" uid="uid://bxtuu2033cr3n" path="res://spikes.gd" id="1_nrdsm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4osn4"]
+size = Vector2(10, 22)
+
+[node name="Spikes" type="Area2D" unique_id=1403005681]
+position = Vector2(2, -8)
+script = ExtResource("1_nrdsm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=731368255]
+position = Vector2(-6, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=243074854]
+position = Vector2(-6, -3)
+shape = SubResource("RectangleShape2D_4osn4")
+
+[node name="Test player" type="CharacterBody2D" parent="." unique_id=1285191885]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
